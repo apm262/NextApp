@@ -5,10 +5,10 @@ const linkStyle = {
 const MyFirstView = () => (
   <section>
     <Link href='/template/profile'>
-      <a style={linkStyle}>Profile</a>
+      <a className="href" style={linkStyle}>Profile</a>
     </Link>
     <Link href='/template/first'>
-      <a style={linkStyle}>Shows</a>
+      <a className="href" style={linkStyle}>Shows</a>
     </Link>
     <h1>Home</h1>
     <p>Hola Mundo</p>

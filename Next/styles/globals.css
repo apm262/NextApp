@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+
+  .titulo{
+    @apply bg-red-700 text-blue-700;
+  }
+  .href{
+    @apply text-blue-700;
+  }
+
+}

@@ -4,11 +4,11 @@ const linkStyle = {
 };
 const Profile = () => (
   <section>
-    <Link href='../'>
-      <a style={linkStyle}>Home</a>
+    <Link href='/'>
+      <a className="href" style={linkStyle}>Home</a>
     </Link>
-    <Link href='./first'>
-      <a style={linkStyle}>Shows</a>
+    <Link href='/template/first'>
+      <a className="href" style={linkStyle}>Shows</a>
     </Link>
     <h1>Profile</h1>
     <p>Hola mundo desde Profile</p>
