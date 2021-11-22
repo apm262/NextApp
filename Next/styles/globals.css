@@ -10,5 +10,11 @@
   .href{
     @apply text-blue-700;
   }
+  .hello{
+    @apply text-blue-500 text-2xl mt-5 font-semibold;
+  }
+  .p{
+    @apply text-xl p-1;
+  }
 
 }

@@ -4,14 +4,17 @@ const linkStyle = {
 };
 const MyFirstView = () => (
   <section>
+
+    <center>
+    <h1 className="hello">Hello tu my first Next App</h1>
+    <p className="p">Selec here where you want to go</p>
     <Link href='/template/profile'>
       <a className="href" style={linkStyle}>Profile</a>
     </Link>
-    <Link href='/template/first'>
-      <a className="href" style={linkStyle}>Shows</a>
+    <Link href='/template/api'>
+      <a className="href" style={linkStyle}>Api</a>
     </Link>
-    <h1>Home</h1>
-    <p>Hola Mundo</p>
+    </center>
   </section>
 );
 export default MyFirstView;
