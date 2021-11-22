@@ -16,5 +16,28 @@
   .p{
     @apply text-xl p-1;
   }
+  .chapters{
+    @apply bg-gray-200 text-black text-xl m-2 text-center;
+    
+  }
+  .nombre{
+    @apply font-semibold text-2xl;
+  }
+
+  .dicho{
+    @apply italic;
+  }
+  img{
+    @apply ml-8;
+  }
+
+  .a{
+
+    @apply border-4 border-blue-500 bg-blue-300 border-opacity-50;
+
+  }
+  button{
+    @apply text-center;
+  }
 
 }

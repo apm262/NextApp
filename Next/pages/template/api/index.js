@@ -1,125 +1,60 @@
-//import React, { useEffect, useState } from 'react';
 
-//const defaultEndpoint = 'https://rickandmortyapi.com/api/character';
+import React, { useEffect, useState } from 'react';
 
-//export async function getServerSidePops(){
-  //const res = await fetch(defaultEndpoint);
-  //const data = await res.json();
+export default function useEffectPage() {
 
-  //return {
-    //props: {
-      //data
-    //}
-  //}
-//}
-
-//export default function Home({ data }){
-  //console.log('data', data);
-//}
-
-
-//import React, { useEffect, useState } from 'react';
-
-// default function useEffectPage() {
-
-    //const [resourceType, setResourceType] = useState('posts');
-    //const [items, setItems] = useState([]);
+    const [resourceType, setResourceType] = useState('10');
+    const [items, setItems] = useState([]);
 
     // UseEffect executes function every change of array arguments:
     // useEffect(function, array_arguments (optional, can be empty array))
     // If no second argument is passed, only execute once
     // Excecutes return content when component willUnmount or 
     // before argument change.
-    //useEffect(() => {
-    //    fetch(`https://rickandmortyapi.com/api/character`)
-    //        .then(response => response.json())
-    //        .then(json => setItems(json))
-    //}, [resourceType]);
+    useEffect(() => {
+        fetch(`https://simpsons-quotes-api.herokuapp.com/quotes?count=${resourceType}`)
+            .then(response => response.json())
+            .then(json => setItems(json))
+    }, [resourceType]);
 
-    //return (
-      //  <>
-           
-    //      <h1 className="text-9xl">{resourceType}</h1>
-   //       <ul className="my-10">
-   //           {items.map((item, index) => {
-   //               return <li key={index} className="my-10 bg-gray-400">{JSON.stringify(item)}</li>
-   //          })}
-    //      </ul>
-    //    </>
+    const [count, setCount] = useState(10);
 
-    //)
-
-//}
-
-//import React, { useEffect, useState } from 'react';
-
-//export default function useEffectPage() {
-
-    //const [resourceType, setResourceType] = useState('1');
-    //const [items, setItems] = useState([]);
-
-    // UseEffect executes function every change of array arguments:
-    // useEffect(function, array_arguments (optional, can be empty array))
-    // If no second argument is passed, only execute once
-    // Excecutes return content when component willUnmount or 
-    // before argument change.
-    //useEffect(() => {
-     //   fetch(`https://rickandmortyapi.com/api/character/${resourceType}`)
-     //       .then(response => response.json())
-     //       .then(json => setItems(json))
-    //}, [resourceType]);
-
-    //return (
-        //<>
-  
-          //  <h1 className="text-9xl"></h1>
-           // <ul className="my-10">
-           //     {items.map((item, index) => {
-            //        return <li key={index} className="my-10 bg-gray-400">{JSON.stringify(item)}</li>
-          //      })}
-          //  </ul>
-      //  </>
-
-    //)
-
-//}
-
-import React from 'react';
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: {},
-      isLoaded: false,
-    }
-  }
-  componentDidMount() {
-    fetch('https://www.episodate.com/api/most-popular?page=1')
-      .then(res => {return res.json();})
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          items: json,    })
+    function decrementCount(){      
+      setCount(prevCount => {
+        setResourceType(prevCount - 1);
+        return prevCount -1;
       });
-  }
-  render() {
+    
+    }
 
-  const { isLoaded, items } = this.state;
-    if (!isLoaded) {
-      return <div>Loading...</div>
+    function incrementCount(){
+      setCount(prevCount => {
+        setResourceType(prevCount + 1);
+        return prevCount + 1;
+      });
     }
-    else {
-      return (
-        <div >
-         <ul>
-           {items.map( item => 
-             <li key={item.id}>{item.name}</li>
-           )}
-         </ul>
-      </div>
-      )
-    }
-  }
+
+
+
+    return (
+        <>
+        
+           
+            <h1 className="text-6xl">Simpsons characters <a href="../../" className="a"><button>Back</button></a></h1>
+            
+              <p className="how">How many chapter want do you see?</p><button className="btn text-2xl" onClick={decrementCount}>-</button>
+                <span className="text-2xl mx-4">{count}</span>
+                <button className="btn text-2xl" onClick={incrementCount}>+</button>
+              
+            <ul className="my-10">
+                {items.map((item, index) => {
+                    return (<li key={index} className="chapters"><div className="nombre">{JSON.stringify(item.character)}</div><div className="foto"><img src={item.image}/></div> <br></br>
+                            <div className="dicho">{JSON.stringify(item.quote)}</div></li>
+                    )
+                })}
+            </ul>
+        </>
+
+    )
+
 }
-export default App
