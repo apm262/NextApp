@@ -14,6 +14,9 @@ const MyFirstView = () => (
     <Link href='/template/api'>
       <a className="href" style={linkStyle}>Api</a>
     </Link>
+    <Link href='/template/form'>
+      <a className="href" style={linkStyle}>Lista</a>
+    </Link>
     </center>
   </section>
 );

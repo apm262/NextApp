@@ -40,4 +40,8 @@
     @apply text-center;
   }
 
+  #palabra{
+    @apply bg-gray-400;
+  }
+
 }
