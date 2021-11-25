@@ -40,7 +40,7 @@ export default function useEffectPage() {
         <>
         
            
-            <h1 className="text-6xl">Simpsons characters <a href="../../" className="a"><button>Back</button></a></h1>
+            <h1 className="text-6xl">Simpsons characters</h1>
             
               <p className="how">How many chapter want do you see?</p><button className="btn text-2xl" onClick={decrementCount}>-</button>
                 <span className="text-2xl mx-4">{count}</span>

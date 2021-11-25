@@ -7,24 +7,27 @@ function form() {
 
     function sumar_palabra(){
         setLista(ol => [...ol ,' '+ palabra]);
-
-  
         
     }
 
     return (
         <>
-        
+            <center>
+            <a href="../../" className="a2"><button>Back</button></a> <br></br><br></br>
+
+            <h1 className="hello2">Here you can enter a phrase by entering words</h1><br></br><br></br>
            
             <form>
 
-                <input onChange={(e)=>setPalabra(e.target.value)} type="text" id="palabra"></input>
+                <input onChange={(e)=>setPalabra(e.target.value)} type="text" id="palabra"></input> <br></br>
 
             </form>
+            <br></br>
+            <button onClick={sumar_palabra} className="enviar">Enviar</button>
 
-            <button onClick={sumar_palabra}>Enviar</button>
+            <p className="frase">La frase formada es: <br></br> <div className="resultado">{lista}</div></p>
 
-            <p>La frase formada es: {lista}</p>
+            </center>
           
         </>
 

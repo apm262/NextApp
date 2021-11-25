@@ -12,10 +12,16 @@ const MyFirstView = () => (
       <a className="href" style={linkStyle}>Profile</a>
     </Link>
     <Link href='/template/api'>
-      <a className="href" style={linkStyle}>Api</a>
+      <a className="href" style={linkStyle}>Api Simpsons</a>
     </Link>
     <Link href='/template/form'>
       <a className="href" style={linkStyle}>Lista</a>
+    </Link>
+    <Link href='/template/pokemon'>
+      <a className="href" style={linkStyle}>Api pokemon</a>
+    </Link>
+    <Link href='/template/event/example'>
+      <a className="href" style={linkStyle}>Event Scroll</a>
     </Link>
     </center>
   </section>
