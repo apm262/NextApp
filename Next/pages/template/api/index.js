@@ -12,9 +12,15 @@ export default function useEffectPage() {
     // Excecutes return content when component willUnmount or 
     // before argument change.
     useEffect(() => {
+      if(resourceType>0){
         fetch(`https://simpsons-quotes-api.herokuapp.com/quotes?count=${resourceType}`)
             .then(response => response.json())
             .then(json => setItems(json))
+      }else{
+        fetch(`https://simpsons-quotes-api.herokuapp.com/quotes?count=0`)
+        .then(response => response.json())
+        .then(json => setItems(json))
+      }
     }, [resourceType]);
 
     const [count, setCount] = useState(10);
@@ -40,7 +46,7 @@ export default function useEffectPage() {
         <>
         
            
-            <h1 className="text-6xl">Simpsons characters</h1>
+            <h1 className="text-6xl">Simpsons characters<a href="../../" className="a2"><button>Back</button></a></h1>
             
               <p className="how">How many chapter want do you see?</p><button className="btn text-2xl" onClick={decrementCount}>-</button>
                 <span className="text-2xl mx-4">{count}</span>
