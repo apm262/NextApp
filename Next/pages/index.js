@@ -23,6 +23,12 @@ const MyFirstView = () => (
     <Link href='/template/event/example'>
       <a className="href" style={linkStyle}>Event Scroll</a>
     </Link>
+    <Link href='/template/memo/usememo'>
+      <a className="href" style={linkStyle}>Memo</a>
+    </Link>
+    <Link href='/template/memo/memo'>
+      <a className="href" style={linkStyle}>Memo2</a>
+    </Link>
     </center>
   </section>
 );

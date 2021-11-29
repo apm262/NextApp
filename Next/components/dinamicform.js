@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function form() {
 
     const [lista, setLista] = useState([]);
     const [palabra, setPalabra] = useState('');
+    const boton = useRef();
+
 
     function sumar_palabra(){
         setLista(ol => [...ol ,' '+ palabra]);
+        boton.current.focus();
+        
         
     }
 
@@ -19,7 +23,7 @@ function form() {
            
             <form>
 
-                <input onChange={(e)=>setPalabra(e.target.value)} type="text" id="palabra"></input> <br></br>
+                <input ref={boton} onChange={(e)=>setPalabra(e.target.value)} type="text" id="palabra"></input> <br></br>
 
             </form>
             <br></br>
