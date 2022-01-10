@@ -29,6 +29,10 @@ const MyFirstView = () => (
     <Link href='/template/memo/memo'>
       <a className="href" style={linkStyle}>Memo2</a>
     </Link>
+    <Link href='/mongo/index'>
+      <a className="href" style={linkStyle}>Mongo</a>
+    </Link>
+    
     </center>
   </section>
 );
